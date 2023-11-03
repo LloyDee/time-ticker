@@ -1,40 +1,23 @@
 package com.javafx;
 
-import javafx.animation.Animation;
-import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
-import javafx.util.Duration;
 
-import java.text.SimpleDateFormat;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
-import java.util.Calendar;
+/**
+ * @author loyd_
+ */
+
 
 public class Controller {
 
-
+    //controls links to FXML nodes
     @FXML
     Label currentDateTime;
-
     @FXML
-    public void initialize() {
-//        SimpleDateFormat timeFormat = new SimpleDateFormat("MMMM dd, yyyy HH:mm:ss a");
-        Timeline clock = new Timeline(new KeyFrame(Duration.ZERO, e ->
-//                currentDateTime.setText(timeFormat.format(Calendar.getInstance().getTime()))
-                currentDateTime.setText(LocalDateTime.now().format(DateTimeFormatter.ofPattern("MMMM dd, yyyy HH:mm:ss a")))
-        ),
-                new KeyFrame(Duration.seconds(1))
-        );
-        clock.setCycleCount(Animation.INDEFINITE);
-        clock.play();
-    }
-
-
+    Label ticker;
     @FXML
-    TextField talkMinutes;
+    TextField talkDurationInMinutes;
     @FXML
     TextField talkOutlineTitle;
     @FXML
@@ -47,49 +30,58 @@ public class Controller {
     Button resetButton;
     @FXML
     Button stopButton;
+
+
+    //this class is responsible for Clock and Ticker per seconds
+    private Timeline ticksPerSeconds;
+
+    //Inherits another Class
+    private Clock clock = new Clock();
+    private Timer timer = new Timer();
+    private Graphics graphics = new Graphics();
+
+    //init the Clock class that's using TimeLine
+    protected void initialize() {
+        clock.initialize(currentDateTime);
+    }
+
+    //methods for action event triggered
     @FXML
-    MenuItem talkNumberOne;
+    protected void startButtonClicks() {
+
+        ticksPerSeconds = timer.runTicker(talkDurationInMinutes, ticker);
+        graphics.uichangesOnStartButton(startButton, resetButton, stopButton, talkDurationInMinutes, talkOutlineTitle);
+
+    }
+
+    @FXML
+    protected void resetButtonClicks() {
+
+        timer.resetTicker(ticker, startButton, resetButton, stopButton);
+
+    }
 
 
     @FXML
-    protected void startButtonClicks() throws InterruptedException {
-        startButton.setText("start");
-        talkOutlineTitle.setDisable(true);
-        talkMinutes.setDisable(true);
-        startButton.setDisable(true);
-        resetButton.setDisable(true);
-        stopButton.setDisable(false);
+    protected void stopButtonClicks() {
+
+        timer.stopTicker(ticksPerSeconds, startButton, resetButton, stopButton, talkDurationInMinutes, talkOutlineTitle);
+
     }
 
-    public void resetButtonClicks(ActionEvent actionEvent) {
-        startButton.setText("start");
-        startButton.setDisable(false);
-        resetButton.setDisable(true);
-        stopButton.setDisable(true);
-    }
-
-    public void stopButtonClicks(ActionEvent actionEvent) {
-        startButton.setText("resume");
-        talkMinutes.setDisable(false);
-        talkOutlineTitle.setDisable(false);
-        startButton.setDisable(false);
-        resetButton.setDisable(false);
-        stopButton.setDisable(true);
-    }
-
-    public void selectTalkOutline() {
+    @FXML
+    protected void selectTalkOutline() {
         for (MenuItem items : morningPrograms.getItems()) {
-            items.setOnAction(e -> {
+            items.setOnAction(actionEvent -> {
                 talkOutlineTitle.setText(items.getText());
-                talkMinutes.setText(items.getId());
+                talkDurationInMinutes.setText(items.getId());
             });
         }
         for (MenuItem items : afternoonPrograms.getItems()) {
-            items.setOnAction(e -> {
+            items.setOnAction(actionEvent -> {
                 talkOutlineTitle.setText(items.getText());
-                talkMinutes.setText(items.getId());
+                talkDurationInMinutes.setText(items.getId());
             });
         }
     }
-
 }

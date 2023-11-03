@@ -8,6 +8,9 @@ import javafx.util.Duration;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+/**
+ * @author loyd_
+ */
 
 public class Clock {
 

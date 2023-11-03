@@ -2,6 +2,9 @@ package com.javafx;
 
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+/**
+ * @author loyd_
+ */
 
 public class Graphics {
     public void uichangesOnStartButton(Button startButton, Button resetButton, Button stopButton, TextField talkDurationInMinutes, TextField talkOutlineTitle) {

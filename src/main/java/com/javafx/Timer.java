@@ -8,6 +8,9 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.paint.Color;
 import javafx.util.Duration;
+/**
+ * @author loyd_
+ */
 
 public class Timer {
     private int seconds = 0;

@@ -3,24 +3,32 @@ package com.javafx;
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
+import javafx.beans.InvalidationListener;
+import javafx.collections.FXCollections;
+import javafx.collections.ListChangeListener;
+import javafx.collections.ObservableArray;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.util.Duration;
 
-import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.Calendar;
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.List;
+import java.util.ListIterator;
 
 public class Controller {
 
 
     @FXML
-    Label currentDateTime;
+    Label currentDateTime; @FXML
+    Spinner outlines;
 
     @FXML
-    public void initialize() {
+    public void initialize () {
 //        SimpleDateFormat timeFormat = new SimpleDateFormat("MMMM dd, yyyy HH:mm:ss a");
         Timeline clock = new Timeline(new KeyFrame(Duration.ZERO, e ->
 //                currentDateTime.setText(timeFormat.format(Calendar.getInstance().getTime()))
@@ -30,6 +38,7 @@ public class Controller {
         );
         clock.setCycleCount(Animation.INDEFINITE);
         clock.play();
+
     }
 
 
@@ -91,5 +100,4 @@ public class Controller {
             });
         }
     }
-
 }

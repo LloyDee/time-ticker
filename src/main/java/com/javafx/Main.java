@@ -16,7 +16,7 @@ public class Main extends Application {
         Scene scene = new Scene(fxmlLoader.load(), 1000, 500);
         stage.setTitle("Timer");
         stage.setScene(scene);
-        stage.setMaximized(true);
+        stage.setMaximized(false);
         stage.show();
 
     }

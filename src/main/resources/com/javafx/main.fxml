@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<BorderPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.javafx.Controller">
+<BorderPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.javafx.Controller">
     <top>
         <GridPane alignment="CENTER" prefHeight="178.0" prefWidth="587.0" BorderPane.alignment="CENTER">
             <columnConstraints>
@@ -71,25 +71,25 @@
                     <font>
                         <Font name="Calisto MT" size="22.0" />
                     </font>
-               <GridPane.margin>
-                  <Insets top="25.0" />
-               </GridPane.margin>
+                    <GridPane.margin>
+                        <Insets top="25.0" />
+                    </GridPane.margin>
                 </Label>
                 <TextField fx:id="talkOutlineTitle" alignment="CENTER" nodeOrientation="RIGHT_TO_LEFT" opacity="0.49" promptText="‘Maghintay kay Jehova Nang May Pananabik’!" GridPane.columnIndex="2" GridPane.columnSpan="5" GridPane.rowIndex="2">
                     <font>
                         <Font name="Calisto MT Bold" size="19.0" />
                     </font>
-               <effect>
-                  <InnerShadow />
-               </effect>
+                    <effect>
+                        <InnerShadow />
+                    </effect>
                 </TextField>
-                <TextField fx:id="talkMinutes" alignment="CENTER" minWidth="20.0" prefHeight="20.0" prefWidth="20.0" text="30" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.rowIndex="5" GridPane.valignment="CENTER" GridPane.vgrow="NEVER">
+                <TextField fx:id="talkMinutes" alignment="CENTER" minWidth="20.0" prefHeight="20.0" prefWidth="20.0" text="30" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.rowIndex="5" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
                     <font>
                         <Font name="Calisto MT Bold" size="15.0" />
                     </font>
-               <GridPane.margin>
-                  <Insets />
-               </GridPane.margin>
+                    <GridPane.margin>
+                        <Insets />
+                    </GridPane.margin>
                 </TextField>
                 <Button fx:id="startButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#startButtonClicks" prefHeight="25.0" prefWidth="500" text="start" GridPane.columnIndex="3" GridPane.rowIndex="7">
                     <font>
@@ -114,19 +114,22 @@
             <opaqueInsets>
                 <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
             </opaqueInsets>
-         <effect>
-            <ColorAdjust brightness="-0.4" contrast="0.35" saturation="-0.14" />
-         </effect>
+            <effect>
+                <ColorAdjust brightness="-0.4" contrast="0.35" saturation="-0.14" />
+            </effect>
         </GridPane>
     </top>
+    <center>
+        <HBox alignment="CENTER" BorderPane.alignment="TOP_CENTER">
+            <Label alignment="CENTER" contentDisplay="CENTER" nodeOrientation="RIGHT_TO_LEFT" snapToPixel="false" text="00:00:00" textFill="#1fa45d" textOverrun="WORD_ELLIPSIS" BorderPane.alignment="CENTER" HBox.hgrow="ALWAYS">
+                <font>
+                    <Font name="Calisto MT Bold" size="300.0" />
+                </font>
+            </Label>
+        </HBox>
+    </center>
     <bottom>
         <ProgressBar prefWidth="200.0" progress="0.0" BorderPane.alignment="CENTER" />
     </bottom>
-    <center>
-        <Label alignment="CENTER" contentDisplay="CENTER" nodeOrientation="RIGHT_TO_LEFT" prefHeight="401.0" prefWidth="600.0" text="00:00:00" textFill="#1fa45d" textOverrun="WORD_ELLIPSIS" BorderPane.alignment="CENTER">
-            <font>
-                <Font name="Calisto MT Bold" size="96.0" />
-            </font>
-        </Label>
-    </center>
+
 </BorderPane>

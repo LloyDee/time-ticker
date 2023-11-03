@@ -36,12 +36,12 @@ public class Controller {
     private Timeline ticksPerSeconds;
 
     //Inherits another Class
-    private Clock clock = new Clock();
-    private Timer timer = new Timer();
-    private Graphics graphics = new Graphics();
+    private final Clock clock = new Clock();
+    private final Timer timer = new Timer();
+    private final Graphics graphics = new Graphics();
 
     //init the Clock class that's using TimeLine
-    protected void initialize() {
+    public void initialize() {
         clock.initialize(currentDateTime);
     }
 

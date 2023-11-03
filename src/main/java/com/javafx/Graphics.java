@@ -4,10 +4,10 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 
 public class Graphics {
-    public void uichangesOnStartButton(Button startButton, Button resetButton, Button stopButton, TextField talkMinutes, TextField talkOutlineTitle) {
+    public void uichangesOnStartButton(Button startButton, Button resetButton, Button stopButton, TextField talkDurationInMinutes, TextField talkOutlineTitle) {
         startButton.setText("start");
         talkOutlineTitle.setDisable(true);
-        talkMinutes.setDisable(true);
+        talkDurationInMinutes.setDisable(true);
         startButton.setDisable(true);
         resetButton.setDisable(true);
         stopButton.setDisable(false);
@@ -21,12 +21,12 @@ public class Graphics {
         stopButton.setDisable(true);
     }
 
-    public void uichangesOnStopButton(Button startButton, Button resetButton, Button stopButton, TextField talkMinutes, TextField talkOutlineTitle) {
+    public void uichangesOnStopButton(Button startButton, Button resetButton, Button stopButton, TextField talkDurationInMinutes, TextField talkOutlineTitle) {
         startButton.setText("resume");
         startButton.setDisable(false);
         resetButton.setDisable(false);
         stopButton.setDisable(true);
-        talkMinutes.setDisable(false);
+        talkDurationInMinutes.setDisable(false);
         talkOutlineTitle.setDisable(false);
     }
 }

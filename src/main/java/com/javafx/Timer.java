@@ -19,10 +19,10 @@ public class Timer {
 
     Graphics graphics = new Graphics();
 
-    public Timeline runTicker(TextField talkMinutes, Label ticker) {
+    public Timeline runTimeTicker(TextField talkDuration, Label timeTicker) {
         Timeline ticks = new Timeline(new KeyFrame(Duration.seconds(1), actionEvent -> {
             String tickerFormat = String.format("%02d:%02d:%02d", hours, minutes, seconds);
-            checkTicker(seconds, talkMinutes, ticker);
+            checkTalkDurationAgainstTimeTicker(minutes, talkDuration, timeTicker);
 
             seconds++;
             if (seconds == 60) {
@@ -35,9 +35,9 @@ public class Timer {
             }
             if (hours == 24) {
                 minutes = 0;
-                ticker.setText("OVERTIME");
+                timeTicker.setText("OVERTIME");
             }
-            ticker.setText(String.valueOf(tickerFormat));
+            timeTicker.setText(String.valueOf(tickerFormat));
         }));
         ticks.setCycleCount(Animation.INDEFINITE);
         ticks.play();
@@ -60,9 +60,9 @@ public class Timer {
         graphics.uichangesOnStopButton(startButton,resetButton,stopButton,talkMinutes,talkOutlineTitle);
 
     }
-    private void checkTicker(int minutes, TextField talkMinutes, Label ticker) {
-        if (talkMinutes.getText().equalsIgnoreCase(String.valueOf(minutes))) {
-            ticker.setTextFill(Color.color(1, 0, 0));
+    private void checkTalkDurationAgainstTimeTicker(int minutes, TextField talkDuration, Label timeTicker) {
+        if (talkDuration.getText().equalsIgnoreCase(String.valueOf(minutes))) {
+            timeTicker.setTextFill(Color.color(1, 0, 0));
         }
     }
 

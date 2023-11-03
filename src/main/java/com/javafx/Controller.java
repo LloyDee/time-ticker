@@ -49,7 +49,7 @@ public class Controller {
     @FXML
     protected void startButtonClicks() {
 
-        ticksPerSeconds = timer.runTicker(talkDurationInMinutes, ticker);
+        ticksPerSeconds = timer.runTimeTicker(talkDurationInMinutes, ticker);
         graphics.uichangesOnStartButton(startButton, resetButton, stopButton, talkDurationInMinutes, talkOutlineTitle);
 
     }

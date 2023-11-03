@@ -83,7 +83,7 @@
                         <InnerShadow />
                     </effect>
                 </TextField>
-                <TextField fx:id="talkDurationInMinutes" alignment="CENTER" minWidth="20.0" prefHeight="20.0" prefWidth="20.0" text="30" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.rowIndex="5" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+                <TextField fx:id="talkMinutes" alignment="CENTER" minWidth="20.0" prefHeight="20.0" prefWidth="20.0" text="30" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.rowIndex="5" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
                     <font>
                         <Font name="Calisto MT Bold" size="15.0" />
                     </font>
@@ -121,13 +121,10 @@
     </top>
     <center>
         <HBox alignment="CENTER" BorderPane.alignment="TOP_CENTER">
-            <Label fx:id="ticker" alignment="CENTER" contentDisplay="CENTER" nodeOrientation="RIGHT_TO_LEFT" snapToPixel="false" text="00:00:00" textFill="#1fa45d" textOverrun="WORD_ELLIPSIS" BorderPane.alignment="CENTER" HBox.hgrow="ALWAYS">
+            <Label alignment="CENTER" contentDisplay="CENTER" nodeOrientation="RIGHT_TO_LEFT" snapToPixel="false" text="00:00:00" textFill="#1fa45d" textOverrun="WORD_ELLIPSIS" BorderPane.alignment="CENTER" HBox.hgrow="ALWAYS">
                 <font>
                     <Font name="Calisto MT Bold" size="300.0" />
                 </font>
-            <HBox.margin>
-               <Insets />
-            </HBox.margin>
             </Label>
         </HBox>
     </center>

@@ -23,7 +23,7 @@ public class Timer {
     Graphics graphics = new Graphics();
 
     public Timeline runTimeTicker(TextField talkDuration, Label timeTicker, ProgressBar loadingBar) {
-        Timeline ticks = new Timeline(new KeyFrame(Duration.millis(200), actionEvent -> {
+        Timeline ticks = new Timeline(new KeyFrame(Duration.seconds(1), actionEvent -> {
             String tickerFormat = String.format("%02d:%02d:%02d", hours, minutes, seconds);
             checkTalkDurationAgainstTimeTicker(minutes, talkDuration, timeTicker);
             graphics.uiChangesOnProgressBar(talkDuration, loadingBar );

@@ -30,6 +30,8 @@ public class Controller {
     Button resetButton;
     @FXML
     Button stopButton;
+    @FXML
+    ProgressBar loadingBar;
 
 
     //this class is responsible for Clock and Ticker per seconds
@@ -49,15 +51,15 @@ public class Controller {
     @FXML
     protected void startButtonClicks() {
 
-        ticksPerSeconds = timer.runTimeTicker(talkDurationInMinutes, ticker);
-        graphics.uichangesOnStartButton(startButton, resetButton, stopButton, talkDurationInMinutes, talkOutlineTitle);
+        ticksPerSeconds = timer.runTimeTicker(talkDurationInMinutes, ticker, loadingBar);
+        graphics.uiChangesOnStartButton(startButton, resetButton, stopButton, talkDurationInMinutes, talkOutlineTitle);
 
     }
 
     @FXML
     protected void resetButtonClicks() {
 
-        timer.resetTicker(ticker, startButton, resetButton, stopButton);
+        timer.resetTicker(ticker, startButton, resetButton, stopButton, loadingBar);
 
     }
 

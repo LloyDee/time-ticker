@@ -41,6 +41,7 @@ public class Controller {
     private final Clock clock = new Clock();
     private final Timer timer = new Timer();
     private final Graphics graphics = new Graphics();
+    private final Data data = new Data();
 
     //init the Clock class that's using TimeLine
     public void initialize() {
@@ -68,6 +69,7 @@ public class Controller {
     protected void stopButtonClicks() {
 
         timer.stopTicker(ticksPerSeconds, startButton, resetButton, stopButton, talkDurationInMinutes, talkOutlineTitle);
+        data.appendRuntime(ticker,talkDurationInMinutes,talkOutlineTitle);
 
     }
 

@@ -45,8 +45,7 @@ public class Timer {
             hours++;
         }
         if (hours == 24) {
-            minutes = 0;
-            timeTicker.setText("OVERTIME");
+            hours = 0;
         }
         timeTicker.setText(String.valueOf(tickerFormat));
 

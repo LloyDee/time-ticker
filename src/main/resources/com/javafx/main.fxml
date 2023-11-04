@@ -8,7 +8,7 @@
 
 <BorderPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.javafx.Controller">
     <top>
-        <GridPane alignment="CENTER" prefHeight="178.0" prefWidth="587.0" BorderPane.alignment="CENTER">
+        <GridPane alignment="CENTER" BorderPane.alignment="CENTER">
             <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" maxWidth="500.0" minWidth="10.0" prefWidth="200.0" />
                 <ColumnConstraints hgrow="SOMETIMES" maxWidth="500.0" minWidth="10.0" prefWidth="50.0" />
@@ -73,7 +73,8 @@
                     <Insets top="25.0" />
                 </GridPane.margin>
             </Label>
-            <TextField fx:id="talkOutlineTitle" alignment="CENTER" nodeOrientation="RIGHT_TO_LEFT" opacity="0.49" promptText="‘Maghintay kay Jehova Nang May Pananabik’!" GridPane.columnIndex="2" GridPane.columnSpan="5" GridPane.rowIndex="2">
+            <TextField fx:id="talkOutlineTitle" alignment="CENTER" nodeOrientation="RIGHT_TO_LEFT" opacity="0.49" promptText="‘Maghintay kay Jehova Nang May Pananabik’!" text="‘Maghintay kay Jehova Nang May Pananabik’!" GridPane.columnIndex="2" GridPane.columnSpan="5" GridPane.rowIndex="2">
+                <tooltip><Tooltip text="Please select a program from the Menu bar before clicking start: Programs -&gt; Morning|Afternoon -&gt; Sessions." /></tooltip>
                 <font>
                     <Font name="Calisto MT Bold" size="19.0" />
                 </font>
@@ -86,10 +87,11 @@
                     <Font name="Calisto MT Bold" size="15.0" />
                 </font>
                 <GridPane.margin>
-                    <Insets />
+                    <Insets bottom="12.0" />
                 </GridPane.margin>
             </TextField>
             <Button fx:id="startButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#startButtonClicks" prefHeight="25.0" prefWidth="500" text="start" GridPane.columnIndex="3" GridPane.rowIndex="7">
+                <tooltip><Tooltip text="Please select a program from the Menu bar before clicking start: Programs -&gt; Morning|Afternoon -&gt; Sessions." /></tooltip>
                 <font>
                     <Font name="Inter Regular" size="15.0" />
                 </font>
@@ -100,6 +102,8 @@
                 </font>
             </Button>
             <Button fx:id="stopButton" alignment="CENTER" contentDisplay="CENTER" disable="true" mnemonicParsing="false" onAction="#stopButtonClicks" prefHeight="25.0" prefWidth="500" text="stop" GridPane.columnIndex="5" GridPane.rowIndex="7">
+                <tooltip><Tooltip text="This will stop the timer and record the runtime to the console." /></tooltip>
+
                 <font>
                     <Font name="Inter Regular" size="15.0" />
                 </font>
@@ -109,15 +113,21 @@
     </top>
     <center>
         <HBox alignment="CENTER" BorderPane.alignment="TOP_CENTER">
-            <Label fx:id="ticker" alignment="CENTER" contentDisplay="CENTER" nodeOrientation="RIGHT_TO_LEFT" snapToPixel="false" text="00:00:00" textFill="#1fa45d" textOverrun="WORD_ELLIPSIS" BorderPane.alignment="CENTER" HBox.hgrow="ALWAYS">
+            <Label fx:id="ticker" alignment="CENTER" contentDisplay="CENTER" nodeOrientation="RIGHT_TO_LEFT" snapToPixel="false" text="00:00:00" textFill="#1fa45d" textOverrun="LEADING_ELLIPSIS" BorderPane.alignment="CENTER">
                 <font>
                     <Font name="Calisto MT Bold" size="300.0" />
                 </font>
+            <HBox.margin>
+               <Insets bottom="50.0" />
+            </HBox.margin>
             </Label>
         </HBox>
     </center>
     <bottom>
         <ProgressBar fx:id="loadingBar" maxWidth="1.7976931348623157E308" progress="0.0" BorderPane.alignment="CENTER" />
     </bottom>
+   <left>
+
+   </left>
 
 </BorderPane>

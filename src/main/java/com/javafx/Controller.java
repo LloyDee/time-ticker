@@ -46,12 +46,12 @@ public class Controller {
     //init the Clock class that's using TimeLine
     public void initialize() {
         clock.initialize(currentDateTime);
+
     }
 
     //methods for action event triggered
     @FXML
     protected void startButtonClicks() {
-
         ticksPerSeconds = timer.runTimeTicker(talkDurationInMinutes, ticker, loadingBar);
         graphics.uiChangesOnStartButton(startButton, resetButton, stopButton, talkDurationInMinutes, talkOutlineTitle);
 
@@ -69,7 +69,7 @@ public class Controller {
     protected void stopButtonClicks() {
 
         timer.stopTicker(ticksPerSeconds, startButton, resetButton, stopButton, talkDurationInMinutes, talkOutlineTitle);
-        data.appendRuntime(ticker,talkDurationInMinutes,talkOutlineTitle);
+        data.appendRuntime(ticker, talkDurationInMinutes, talkOutlineTitle);
 
     }
 

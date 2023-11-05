@@ -4,6 +4,8 @@ import javafx.animation.Timeline;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 
+import java.util.ArrayList;
+
 /**
  * @author loyd_
  */
@@ -32,6 +34,8 @@ public class Controller {
     Button stopButton;
     @FXML
     ProgressBar loadingBar;
+    ArrayList<String> recorder = new ArrayList<>();
+    int counter = 1;
 
 
     //this class is responsible for Clock and Ticker per seconds
@@ -67,10 +71,10 @@ public class Controller {
 
     @FXML
     protected void stopButtonClicks() {
-
         timer.stopTicker(ticksPerSeconds, startButton, resetButton, stopButton, talkDurationInMinutes, talkOutlineTitle);
-        data.appendRuntime(ticker, talkDurationInMinutes, talkOutlineTitle);
-
+        recorder.add(counter+". "+talkOutlineTitle.getText()+" - "+talkDurationInMinutes.getText()+" min.talk\t|\t"+ticker.getText());
+        counter++;
+        data.appendRuntime(ticker,talkDurationInMinutes,talkOutlineTitle);
     }
 
     @FXML

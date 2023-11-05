@@ -27,8 +27,8 @@ public class Timer {
             String tickerFormat = String.format("%02d:%02d:%02d", hours, minutes, seconds);
             checkTalkDurationAgainstTimeTicker(minutes, talkDuration, timeTicker);
             graphics.uiChangesOnProgressBar(talkDuration, loadingBar );
-            calculateRuntime(timeTicker, tickerFormat);
             seconds++;
+            calculateRuntime(timeTicker, tickerFormat);
         }));
         ticks.setCycleCount(Animation.INDEFINITE);
         ticks.play();
@@ -36,7 +36,7 @@ public class Timer {
     }
 
     private void calculateRuntime(Label timeTicker, String tickerFormat) {
-        if (seconds == 60) {
+        if (seconds ==60) {
             seconds = 0;
             minutes++;
         }

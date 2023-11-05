@@ -73,7 +73,7 @@
                     <Insets top="25.0" />
                 </GridPane.margin>
             </Label>
-            <TextField fx:id="talkOutlineTitle" alignment="CENTER" nodeOrientation="RIGHT_TO_LEFT" opacity="0.49" promptText="‘Maghintay kay Jehova Nang May Pananabik’!" text="‘Maghintay kay Jehova Nang May Pananabik’!" GridPane.columnIndex="2" GridPane.columnSpan="5" GridPane.rowIndex="2">
+            <TextField fx:id="talkOutlineTitle" alignment="CENTER" nodeOrientation="LEFT_TO_RIGHT" opacity="0.49" promptText="‘Maghintay kay Jehova Nang May Pananabik’!" text="‘Maghintay kay Jehova Nang May Pananabik’!" GridPane.columnIndex="2" GridPane.columnSpan="5" GridPane.rowIndex="2">
                 <tooltip><Tooltip text="Please select a program from the Menu bar before clicking start: Programs -&gt; Morning|Afternoon -&gt; Sessions." /></tooltip>
                 <font>
                     <Font name="Calisto MT Bold" size="19.0" />

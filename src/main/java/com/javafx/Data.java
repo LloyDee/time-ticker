@@ -12,9 +12,15 @@ public class Data {
     int counter = 1;
 
     public void appendRuntime(Label ticker, TextField talkDurationInMinutes, TextField talkOutlineTitle) {
-        System.out.printf("%d. %10s - %s min. talk \t|\t%s \n",counter, talkOutlineTitle.getText(), talkDurationInMinutes.getText(),ticker.getText());
+        System.out.printf("%d. %10s - %s min. talk \t|\t%s \n", counter, talkOutlineTitle.getText(), talkDurationInMinutes.getText(), ticker.getText());
         counter++;
     }
+
+//    public void appendRuntime(ArrayList<String> list) {
+//        for (String listOfTalkRecorded:list){
+//            System.out.println(listOfTalkRecorded);
+//        }
+//    }
 
 
 }

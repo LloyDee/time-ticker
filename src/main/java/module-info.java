@@ -1,6 +1,7 @@
 module com.example.helloworldfx {
     requires javafx.controls;
     requires javafx.fxml;
+    requires json.simple;
 
 
     opens com.javafx to javafx.fxml;

@@ -42,24 +42,12 @@
             <MenuBar GridPane.columnSpan="9" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
                 <Menu mnemonicParsing="false" text="Programs">
                     <Menu fx:id="morningPrograms" mnemonicParsing="false" onAction="#selectTalkOutline" text="Morning">
-                        <MenuItem id="28" mnemonicParsing="false" text="Maghintay kay Jehova Nang May Pananabik—Paano?" />
-                        <MenuItem id="21" mnemonicParsing="false" text="Simposyum: Tularan ang mga Naghintay Nang May Pananabik • Habakuk" />
-                        <MenuItem id="18" mnemonicParsing="false" text="Simposyum: Tularan ang mga Naghintay Nang May Pananabik • Juan" />
-                        <MenuItem id="18" mnemonicParsing="false" text="Simposyum: Tularan ang mga Naghintay Nang May Pananabik • Ana" />
-                        <MenuItem id="15" mnemonicParsing="false" text="Ano Pa ang Hinihintay Mo?" />
-                        <MenuItem id="30" mnemonicParsing="false" text="Pag-aalay at Bautismo" />
                     </Menu>
                     <Menu fx:id="afternoonPrograms" mnemonicParsing="false" onAction="#selectTalkOutline" text="Afternoon">
-                        <MenuItem id="28" mnemonicParsing="false" text="Pahayag Pangmadla: Sulit Pa Rin Bang Maging Matiisin?" />
-                        <MenuItem id="30" mnemonicParsing="false" text="Sumaryo ng Bantayan" />
-                        <MenuItem id="21" mnemonicParsing="false" text="Simposyum: Hintayin si Jehova . . . Kapag Pakiramdam Mo Nag-iisa Ka" />
-                        <MenuItem id="18" mnemonicParsing="false" text="Simposyum: Hintayin si Jehova . . . Kapag Nakagawa Ka ng mga Pagkakamali" />
-                        <MenuItem id="18" mnemonicParsing="false" text="Simposyum: Hintayin si Jehova . . . Kapag Parang Nagtatagumpay ang Masasama" />
-                        <MenuItem id="35" mnemonicParsing="false" text="'May Gantimpala Para sa Matuwid'" />
                     </Menu>
                 </Menu>
                 <Menu mnemonicParsing="false" text="Help">
-                    <MenuItem mnemonicParsing="false" text="Select the Programs on this Menubar to auto-populate the Title and Duration of the talk" />
+                    <MenuItem mnemonicParsing="false" text="Select the Programs on this Menu bar to auto-populate the Title and Duration of the talk" />
                 </Menu>
                 <GridPane.margin>
                     <Insets bottom="25.0" left="-10.0" right="-10.0" />

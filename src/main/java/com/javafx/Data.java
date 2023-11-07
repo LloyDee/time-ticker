@@ -20,13 +20,13 @@ public class Data {
     int counter = 1;
 
     public void appendRuntime(Label ticker, TextField talkDurationInMinutes, TextField talkOutlineTitle) {
-        System.out.printf("%d. %10s - %s min. talk \t|\t%s \n", counter, talkOutlineTitle.getText(), talkDurationInMinutes.getText(), ticker.getText());
+        System.out.printf("%d. %-80s - %5s min. talk %20s \n", counter, talkOutlineTitle.getText(), talkDurationInMinutes.getText(), ticker.getText());
         counter++;
     }
 
     public ArrayList<Programs> readFromJSON() throws IOException, ParseException {
         JSONParser parser = new JSONParser();
-        JSONArray a = (JSONArray) parser.parse(new FileReader("src/main/resources/com/javafx/outlines.json"));
+        JSONArray a = (JSONArray) parser.parse(new FileReader("C:\\Users\\loyd_\\IntelliJProjects\\HelloWorldFX\\src\\main\\resources\\com\\javafx\\outlines.json"));
         ArrayList<Programs> programs = new ArrayList<>();
         for (Object o : a) {
             JSONObject obj = (JSONObject) o;

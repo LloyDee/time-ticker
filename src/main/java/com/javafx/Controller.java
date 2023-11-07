@@ -60,8 +60,13 @@ public class Controller {
     public void initialize() {
 
         clock.initialize(currentDateTime);
+        initializeMenuItems();
 
+    }
+
+    private void initializeMenuItems() {
         int index = 0;
+
         for (Programs program:programs){
             MenuItem menuItem = new MenuItem(program.getTalk());
             menuItem.setId(program.getMinute());
@@ -72,29 +77,28 @@ public class Controller {
             }
             index++;
         }
-
-
     }
 
     //methods for action event triggered
     @FXML
-    protected void startButtonClicks() {
+    protected void onStartButtonClicked() {
 
         ticksPerSeconds = timer.runTimeTicker(talkDurationInMinutes, ticker, loadingBar);
         graphics.uiChangesOnStartButton(startButton, resetButton, stopButton, talkDurationInMinutes, talkOutlineTitle);
 
     }
 
-    @FXML
-    protected void resetButtonClicks() {
 
+
+    @FXML
+    protected void onResetButtonClicked() {
         timer.resetTicker(ticker, startButton, resetButton, stopButton, loadingBar);
 
     }
 
 
     @FXML
-    protected void stopButtonClicks() {
+    protected void onStopButtonClicked() {
         timer.stopTicker(ticksPerSeconds, startButton, resetButton, stopButton, talkDurationInMinutes, talkOutlineTitle);
         recorder.add(counter + ". " + talkOutlineTitle.getText() + " - " + talkDurationInMinutes.getText() + " min.talk\t|\t" + ticker.getText());
         counter++;
@@ -102,19 +106,22 @@ public class Controller {
     }
 
     @FXML
-    protected void selectTalkOutline() {
-        for (MenuItem items : morningPrograms.getItems()) {
-            items.setOnAction(actionEvent -> {
-                talkOutlineTitle.setText(items.getText());
-                talkDurationInMinutes.setText(items.getId());
+    protected void whenSelectingTalkOutline() {
+        for (MenuItem morningProgram : morningPrograms.getItems()) {
+            morningProgram.setOnAction(actionEvent -> {
+                talkOutlineTitle.setText(morningProgram.getText());
+                talkDurationInMinutes.setText(morningProgram.getId());
             });
+        }
 
-        }
-        for (MenuItem items : afternoonPrograms.getItems()) {
-            items.setOnAction(actionEvent -> {
-                talkOutlineTitle.setText(items.getText());
-                talkDurationInMinutes.setText(items.getId());
+        for (MenuItem afternoonProgram : afternoonPrograms.getItems()) {
+            afternoonProgram.setOnAction(actionEvent -> {
+                talkOutlineTitle.setText(afternoonProgram.getText());
+                talkDurationInMinutes.setText(afternoonProgram.getId());
             });
         }
+    }
+    private void handlesNullTimer() {
+        System.err.println("Timer object is null. Unable to start the timer.");
     }
 }

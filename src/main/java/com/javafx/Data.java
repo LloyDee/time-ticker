@@ -7,7 +7,9 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
+import java.io.BufferedWriter;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 
@@ -19,8 +21,10 @@ public class Data {
 
     int counter = 1;
 
-    public void appendRuntime(Label ticker, TextField talkDurationInMinutes, TextField talkOutlineTitle) {
-        System.out.printf("%d. %-80s - %5s min. talk %20s \n", counter, talkOutlineTitle.getText(), talkDurationInMinutes.getText(), ticker.getText());
+    public void appendRuntime(Label ticker, TextField talkDurationInMinutes, TextField talkOutlineTitle) throws IOException {
+        String out = String.format("%d. %-80s - %5s min. talk %20s \n", counter, talkOutlineTitle.getText(), talkDurationInMinutes.getText(), ticker.getText());
+        System.out.printf(out);
+        saveHere(out);
         counter++;
     }
 
@@ -41,6 +45,15 @@ public class Data {
             programs.add(new Programs(number, talk, minute));
         }
         return programs;
+    }
+
+    public void saveHere(String s)
+            throws IOException {
+        String username = System.getProperty("user.name");
+        BufferedWriter writer = new BufferedWriter(new FileWriter("C:\\Users\\"+username+"\\Downloads\\output.txt", true));
+//        writer.newLine();
+        writer.write(s);
+        writer.close();
     }
 
 //    public static void writeJSON(String number, String talk, String minute, String time, String speaker) {

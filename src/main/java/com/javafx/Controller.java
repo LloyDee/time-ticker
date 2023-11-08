@@ -98,7 +98,7 @@ public class Controller {
 
 
     @FXML
-    protected void onStopButtonClicked() {
+    protected void onStopButtonClicked() throws IOException {
         timer.stopTicker(ticksPerSeconds, startButton, resetButton, stopButton, talkDurationInMinutes, talkOutlineTitle);
         recorder.add(counter + ". " + talkOutlineTitle.getText() + " - " + talkDurationInMinutes.getText() + " min.talk\t|\t" + ticker.getText());
         counter++;
